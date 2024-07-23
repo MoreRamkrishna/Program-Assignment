@@ -1,0 +1,48 @@
+# 1] Python Program for Find largest prime factor of a number
+import math
+a = int(input("enter the number: "))
+LargPrime = 0
+while a % 2 == 0:
+    LargPrime =2
+    a = a / 2
+for i in range(2,int(math.sqrt(a))):
+    while a % i ==0:
+        LargPrime = i
+        a = a / i
+if a > 2:
+    LargPrime = a
+print("Prime Factor of number is :",int(LargPrime))
+---------------------------------------------------------------------------------------
+# 2] Python Program to find Factorial of Number
+num = int(input("Enter the number :"))
+factorial = 1
+for i in range(1, num + 1):
+    factorial = factorial * i
+print("factorial",num,"number is:",factorial)
+---------------------------------------------------------------------------------------
+# 3] Python Program for Find sum of odd factors of a number
+num = int(input("Enter the number \n"))
+for i in range(1, num + 1):
+    if num % i == 0:
+        if i % 2 == 0:
+            print(i," Even")
+        else:
+            print(i," Odd")
+----------------------------------------------------------------------------------------
+# 4] Python Program to Check if binary representation is a palindrome
+dec = int(input("Enter a number: "))
+Bin = int(bin(dec)[2:])
+rev = str(Bin)[::-1]
+if int(rev) == Bin:
+    print("Number is Palindrome")
+else:
+    print("Number is Not Palindrome")
+---------------------------------------------------------------------------------------
+# 5] Write a Python program to find all words starting with 'a' or 'e' in a given string.
+import re
+text = input("Enter the String :")
+list = re.findall("[ae]\w+",text)
+print(list)
+
+
+
