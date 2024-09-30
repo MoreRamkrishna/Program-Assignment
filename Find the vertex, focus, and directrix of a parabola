@@ -1,0 +1,31 @@
+def parabola_properties(a, h, k, orientation='vertical'):
+    if orientation == 'vertical':
+        # For vertical parabola y = a(x - h)^2 + k
+        vertex = (h, k)
+        focus = (h, k + 1 / (4 * a))
+        directrix = k - 1 / (4 * a)
+        directrix_equation = f"y = {directrix}"
+    elif orientation == 'horizontal':
+        # For horizontal parabola x = a(y - k)^2 + h
+        vertex = (h, k)
+        focus = (h + 1 / (4 * a), k)
+        directrix = h - 1 / (4 * a)
+        directrix_equation = f"x = {directrix}"
+    else:
+        raise ValueError("Invalid orientation. Choose 'vertical' or 'horizontal'.")
+
+    return vertex, focus, directrix_equation
+
+# Input parameters for the parabola
+a = float(input("Enter the value of a (coefficient): "))
+h = float(input("Enter the value of h (vertex x-coordinate): "))
+k = float(input("Enter the value of k (vertex y-coordinate): "))
+orientation = input("Enter the orientation of the parabola (vertical/horizontal): ").lower()
+
+# Calculate the vertex, focus, and directrix
+vertex, focus, directrix = parabola_properties(a, h, k, orientation)
+
+# Output the results
+print(f"Vertex: {vertex}")
+print(f"Focus: {focus}")
+print(f"Directrix: {directrix}")
