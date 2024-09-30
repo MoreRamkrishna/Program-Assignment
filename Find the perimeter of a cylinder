@@ -1,0 +1,13 @@
+import math
+
+def cylinder_perimeter(radius):
+    # Formula to calculate the perimeter of the base
+    perimeter = 2 * math.pi * radius
+    return perimeter
+
+# Input radius of the base
+radius = float(input("Enter the radius of the cylinder base: "))
+
+# Calculate and print the perimeter
+perimeter = cylinder_perimeter(radius)
+print(f"The perimeter (circumference) of the cylinder's base is: {perimeter}")
