@@ -1,0 +1,30 @@
+def check_number(num):
+    # Mimicking switch-case using a dictionary
+    switch = {
+        'positive': lambda: print(f"{num} is Positive."),
+        'negative': lambda: print(f"{num} is Negative."),
+        'zero': lambda: print(f"{num} is Zero."),
+    }
+    
+    # Check the condition and call the appropriate function
+    if num > 0:
+        switch['positive']()
+    elif num < 0:
+        switch['negative']()
+    else:
+        switch['zero']()
+
+# Example usage with a loop
+while True:
+    # Input a number from the user
+    user_input = input("Enter a number (or type 'exit' to stop): ")
+
+    if user_input.lower() == 'exit':
+        print("Exiting the program.")
+        break
+
+    try:
+        number = float(user_input)
+        check_number(number)
+    except ValueError:
+        print("Please enter a valid number.")
