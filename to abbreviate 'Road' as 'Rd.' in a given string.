@@ -1,0 +1,9 @@
+def abbreviate_road(text):
+    # Replace 'Road' with 'Rd.'
+    return text.replace('Road', 'Rd.')
+
+# Example usage
+input_text = "123 Main Road, Springfield"
+output_text = abbreviate_road(input_text)
+print(f"Original text: {input_text}")
+print(f"Modified text: {output_text}")
