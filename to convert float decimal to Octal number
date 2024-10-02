@@ -1,0 +1,24 @@
+def float_to_octal(num):
+    # Split the number into integer and fractional parts
+    integer_part = int(num)
+    fractional_part = num - integer_part
+
+    # Convert the integer part to octal
+    octal_integer = oct(integer_part).replace("0o", "")
+
+    # Convert the fractional part to octal
+    octal_fractional = []
+    while fractional_part != 0 and len(octal_fractional) < 10:  # Limiting precision to 10 digits
+        fractional_part *= 8
+        fractional_digit = int(fractional_part)
+        octal_fractional.append(str(fractional_digit))
+        fractional_part -= fractional_digit
+
+    # Combine the integer and fractional parts
+    octal_result = octal_integer + "." + "".join(octal_fractional)
+    return octal_result
+
+# Example usage:
+decimal_number = 12.34
+octal_representation = float_to_octal(decimal_number)
+print(f"Octal representation of {decimal_number} is {octal_representation}")
