@@ -1,0 +1,17 @@
+# Function to generate Fibonacci series up to n terms
+def fibonacci_series(n):
+    fib_sequence = [0, 1]  # Initial two terms of Fibonacci series
+    while len(fib_sequence) < n:
+        next_term = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_term)
+    return fib_sequence[:n]
+
+# Get user input for the number of terms
+n = int(input("Enter the number of terms: "))
+
+# Check if the number of terms is valid
+if n <= 0:
+    print("Please enter a positive integer.")
+else:
+    print(f"Fibonacci series up to {n} terms:")
+    print(fibonacci_series(n))
