@@ -10,4 +10,4 @@ for i in range(0, n):
         result = first + second
         first = second
         second = result
-    print(result
+    print(result)
