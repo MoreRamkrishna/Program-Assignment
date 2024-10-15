@@ -15,4 +15,4 @@ while number1 != 0:
 if temp == result:
     print("The number is an Armstrong number")
 else:
-    print("The number is not an Armstrong number
+    print("The number is not an Armstrong number")
